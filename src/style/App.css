@@ -1,0 +1,500 @@
+* {
+  font-family: "Fira Code", monospace;
+}
+
+body {
+  background-color: var(--1);
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+.down,
+.up {
+  display: none;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  height: 100px;
+  align-items: center;
+  margin: 0 5%;
+}
+
+[href="#myskills"]:hover {
+  color: var(--3);
+}
+
+[href="#aboutme"]:hover {
+  color: var(--4);
+}
+
+[href="#myprojects"]:hover {
+  color: var(--5);
+}
+
+[href="#contactme"]:hover,
+[href="#home"]:hover {
+  color: var(--6);
+}
+
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav a {
+  color: var(--2);
+}
+
+main {
+  font-size: 24px;
+  height: 500px;
+  display: flex;
+  color: var(--2);
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin: 0 5%;
+}
+
+.btn-resume {
+  padding: 10px 20px;
+  color: var(--2);
+  font-size: 16px;
+  border: 1px solid var(--2);
+  background: var(--1);
+  transition: box-shadow 0.5s ease;
+}
+
+.btn-resume:hover {
+  box-shadow: 0 0 8px var(--2);
+}
+
+section {
+  margin: 0 5%;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  align-items: center;
+  margin: 50px;
+}
+
+.subH {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 0;
+  color: var(--2);
+}
+
+.devimage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10%;
+}
+
+.devimage img {
+  width: 100%;
+}
+
+.myskills,
+.myprojects,
+.contactme,
+.aboutme {
+  color: var(--2);
+  display: grid;
+  grid-template-columns: 100%;
+  margin: 100px 0;
+}
+
+.myskills ul {
+  list-style-type: none;
+}
+
+.skills {
+  border: 1px solid var(--2);
+  margin: 50px;
+}
+
+.skills>div:nth-of-type(1) {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 50px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.162);
+}
+
+.skills>div:nth-of-type(1)>div {
+  margin-left: 15px;
+  border-radius: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.skills div:nth-of-type(2) {
+  display: grid;
+  grid-template-columns: 5% auto;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: auto;
+  margin: 50px;
+  gap: 50px;
+}
+
+.project {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  width: 100%;
+  height: 300px;
+  border: 1px solid var(--2);
+  transition: box-shadow 0.5s ease;
+}
+
+.project-reverse {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  width: 100%;
+  height: 300px;
+  border: 1px solid var(--2);
+  transition: box-shadow 0.5s ease;
+}
+
+.project:hover,
+.project-reverse:hover {
+  box-shadow: 0 0 8px var(--2);
+}
+
+.progress {
+  border: 2px solid red;
+}
+
+.progress:hover {
+  box-shadow: 0 0 8px red;
+}
+
+.proimg {
+  overflow: hidden;
+}
+
+.proimg img {
+  width: 100%;
+  height: auto;
+}
+
+.progressimg {
+  background-color: #F6F6F8;
+  overflow: hidden;
+  text-align: center;
+}
+
+.progressimg img {
+  width: auto;
+  height: 100%;
+}
+
+.prodes {
+  color: var(--2);
+  padding: 30px
+}
+
+.prodes h3 {
+  text-align: center;
+  font-size: 18px;
+}
+
+.order1 {
+  order: 1;
+}
+
+.order2 {
+  order: 2;
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  margin: 50px;
+}
+
+.contact a {
+  color: var(--2);
+  text-align: center;
+  border: 1px solid var(--2);
+  padding: 20px 0;
+  transition: box-shadow 0.5s ease;
+}
+
+.contact a:hover {
+  box-shadow: 0 0 8px var(--2);
+}
+
+.contact img {
+  width: 30px;
+}
+
+.gototop {
+  position: fixed;
+  bottom: -50px;
+  height: 50px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  justify-content: space-around;
+  transition: all 0.5s ease-out;
+  background-color: var(--2);
+  align-items: center;
+}
+
+.gototop.visible {
+  bottom: 0px;
+}
+
+.gototop a {
+  color: var(--1);
+  font-weight: bold;
+  align-items: center;
+}
+
+@media (max-width:1280px) {
+
+  nav,
+  .project {
+    grid-template-columns: 35% 65%;
+  }
+
+  .project-reverse,
+  .about {
+    grid-template-columns: 65% 35%;
+  }
+
+  .contact {
+    grid-template-columns: 50% 50%;
+  }
+
+  /* .myskills, .myprojects, .contactme, .aboutme{
+      grid-template-columns: 5% auto;
+  } */
+
+}
+
+@media (max-width:1136px) {
+  nav {
+    grid-template-columns: 30% 70%;
+  }
+
+  .project {
+    grid-template-columns: 40% 60%;
+  }
+
+  .project-reverse,
+  .about {
+    grid-template-columns: 60% 40%;
+  }
+
+  .prodes {
+    padding: 20px;
+  }
+
+}
+
+@media (max-width:1024px) {
+  nav {
+    grid-template-columns: 25% 75%;
+  }
+
+  .project,
+  .project-reverse {
+    height: 350px;
+  }
+}
+
+@media (max-width:992px) {
+  nav {
+    text-align: center;
+    grid-template-columns: 100%;
+  }
+
+  main {
+    font-size: 22px;
+  }
+
+  .subH {
+    font-size: 20px;
+  }
+
+  /* .myskills, .myprojects, .contactme, .aboutme{
+      margin:80px;
+  } */
+
+}
+
+@media (max-width:768px) {
+
+  nav {
+    height: 50px;
+    align-items: start;
+    transition: all 0.5s ease-in-out;
+    gap: 0;
+  }
+
+  .down {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+
+  .up {
+    width: 100%;
+    display: none;
+    text-align: center;
+  }
+
+  .nav-list {
+    margin-top: 0;
+    display: none;
+    text-align: left;
+  }
+
+  .nav-list a {
+    margin: 30px 0px;
+  }
+
+  main {
+    font-size: 18px;
+    height: 450px;
+  }
+
+  .btn-resume {
+    margin-top: 20px;
+  }
+
+  .subH {
+    font-size: 18px;
+  }
+
+  .skills>div:nth-of-type(1)>div {
+    margin-left: 10px;
+    width: 15px;
+    height: 15px;
+  }
+
+  .about {
+    grid-template-columns: 100%;
+  }
+
+  .devimage img {
+    width: 80%;
+  }
+
+  .project,
+  .project-reverse {
+    grid-template-columns: 100%;
+    height: 600px;
+  }
+
+  .skills,
+  .projects,
+  .contact,
+  .about {
+    margin: 10px 0;
+  }
+
+  .order2 {
+    order: 1;
+  }
+
+  .contact {
+    display: grid;
+    grid-template-columns: 100%;
+  }
+
+  .contact img {
+    width: 25px;
+  }
+
+  .gototop {
+    display: none;
+  }
+
+}
+
+@media (max-width:640px) {
+
+  main {
+    font-size: 16px;
+    height: 400px;
+  }
+
+
+  .btn-resume {
+    padding: 8px 18px;
+    font-size: 14px;
+  }
+
+  .myskills,
+  .myprojects,
+  .contactme,
+  .aboutme {
+    margin: 80px 0;
+  }
+}
+
+@media (max-width:576px) {
+
+  main {
+    font-size: 14px;
+  }
+
+  .project,
+  .project-reverse {
+    height: 500px;
+  }
+
+  .prodes {
+    padding: 10px;
+  }
+
+  .prodes h3 {
+    font-size: 16px;
+  }
+
+  .myskills,
+  .myprojects,
+  .contactme,
+  .aboutme {
+    margin: 60px 0;
+  }
+}
+
+@media (max-width:475px) {
+
+  main {
+    font-size: 12px;
+    height: 350px;
+  }
+
+  .btn-resume {
+    padding: 6px 16px;
+    font-size: 12px;
+  }
+
+  .myskills,
+  .myprojects,
+  .contactme,
+  .aboutme {
+    margin: 40px 0;
+  }
+}

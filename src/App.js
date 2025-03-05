@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import './style/App.css';
+import './style/var.css';
+import AppRoutes from './Routes'
+import { useEffect } from "react";
+import { fairyDustCursor } from "cursor-effects";
 
 function App() {
+
+  useEffect(() => {
+    new fairyDustCursor({
+      colors: ["#FFD710", "#569CD6", "#64C991", "#CE9178", "#FDF8F8"],
+    });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <AppRoutes />
+    </>
   );
 }
 
