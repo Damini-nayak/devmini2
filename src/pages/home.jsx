@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Base from '../components/Base'
 import resume from '../img/Resume.pdf'
+import Typewriter from 'typewriter-effect';
+import { TypeAnimation } from 'react-type-animation';
 
 export default function Home() {
 
@@ -70,43 +72,51 @@ export default function Home() {
             justifyContent: "space-around",
         },
         medium: {
-            display:"flex",
+            display: "flex",
         },
         small: {
             display: isOpen ? "grid" : "none",
         },
     };
 
-    const up ={
-        large:{
+    const up = {
+        large: {
             display: "none",
         },
-        medium:{
+        medium: {
             display: "none",
         },
-        small:{
-            display: isOpen ? "block" : "none" 
-        } 
+        small: {
+            display: isOpen ? "block" : "none"
+        }
     };
 
-    const down ={
-        large:{
+    const down = {
+        large: {
             display: "none",
         },
-        medium:{
+        medium: {
             display: "none",
         },
-        small:{
-            display: isOpen ? "none" : "block" 
-        } 
+        small: {
+            display: isOpen ? "none" : "block"
+        }
     }
 
 
     return (
         <>
             <nav id="home" style={{ ...navStyles[screenSize], transition: "0.3s ease" }}>
-                <h3><a href="/">Devmini</a></h3>
-                <div style={{ ...navListStyles[screenSize], transition: "0.5s ease",
+                <h3><a href="/">
+                    <Typewriter
+                        options={{
+                            strings: ['Devmini', 'Damini'],
+                            autoStart: true,
+                            loop: true,
+                        }}
+                    /></a></h3>
+                <div style={{
+                    ...navListStyles[screenSize], transition: "0.5s ease",
                 }} className="nav-list">
                     <a href="#myskills"><span style={{ color: "var(--3)" }}>01.</span> My Skills</a>
                     <a href="#aboutme"><span style={{ color: "var(--4)" }}>02.</span> About Me</a>
@@ -132,7 +142,22 @@ export default function Home() {
                     <h1>
                         Hi there<span style={{ color: "var(--5)" }}>!</span> <br /> My name is Damini <br /> <span
                             style={{ color: "var(--6)" }}>&</span> <br /> I<span style={{ color: "var(--3)" }}>'</span>m a <span
-                                style={{ color: "var(--4)" }}>Front-end developer</span>
+                                style={{ color: "var(--4)" }}><TypeAnimation
+                                sequence={[
+                                  // Same substring at the start will only be typed out once, initially
+                                  'Front-end Developer',
+                                  1000, // wait 1s before replacing "Mice" with "Hamsters"
+                                  'React Developer',
+                                  1000,
+                                  'Next Developer',
+                                  1000,
+                                //   'Figma Designer',
+                                //   1000
+                                ]}
+                                wrapper="span"
+                                speed={50}
+                                repeat={Infinity}
+                              /></span>
                         <br />
                         <a href={resume} target="_blank"><button className="btn-resume">Download resume</button></a>
                     </h1>

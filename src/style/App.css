@@ -30,19 +30,23 @@ nav {
 
 [href="#myskills"]:hover {
   color: var(--3);
+  transition: color 0.3s ease;
 }
 
 [href="#aboutme"]:hover {
   color: var(--4);
+  transition: color 0.3s ease;
 }
 
 [href="#myprojects"]:hover {
   color: var(--5);
+  transition: color 0.3s ease;
 }
 
 [href="#contactme"]:hover,
 [href="#home"]:hover {
   color: var(--6);
+  transition: color 0.3s ease;
 }
 
 .nav-list {
